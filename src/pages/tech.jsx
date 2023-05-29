@@ -67,7 +67,7 @@ export default function Uses() {
           <ToolsSection title="Design">
             <Tool title="Figma" />
           </ToolsSection>
-          <ToolsSection title="Backend">
+          <ToolsSection title="Backend/Database">
             <Tool title="Node.js (Express.js)">
               Node.js is my preferred language in backend and is also the one
               I'm most comfortable with together with Next.js.{' '}
