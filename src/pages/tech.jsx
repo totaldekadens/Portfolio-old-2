@@ -28,13 +28,12 @@ function Tool({ title, href, children }) {
 export default function Uses() {
   return (
     <>
-      s
       <Head>
         <title>Tech - Angelica Moberg Skoglund</title>
         <meta name="description" content="Tech and stack I use." />
       </Head>
       <SimpleLayout
-        title="Tech and stack I use or/and have learned"
+        title="Tech / Stack"
         // intro="I get asked a lot about the things I use to build software, stay productive, or buy to fool myself into thinking I’m being productive when I’m really just procrastinating. Here’s a big list of all of my favorite stuff."
       >
         <div className="space-y-20">

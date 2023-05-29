@@ -55,10 +55,7 @@ export default function ArticlesIndex({ articles }) {
         <title>Merits - Angelica Moberg Skoglund</title>
         <meta name="description" content="Some of my merits." />
       </Head>
-      <SimpleLayout
-        title="Check out my merits"
-        intro="This page is not fully updated."
-      >
+      <SimpleLayout title="Merits" intro="This page is not fully updated.">
         <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
           <div className="flex max-w-3xl flex-col space-y-16">
             {list.map((article, i) => (

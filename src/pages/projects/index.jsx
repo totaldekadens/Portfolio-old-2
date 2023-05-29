@@ -45,7 +45,7 @@ export default function ArticlesIndex({ articles }) {
         />
       </Head>
       <SimpleLayout
-        title="Check out my recent projects"
+        title="Projects"
         intro="This page is under construction. All of my projects are not here atm "
       >
         <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">

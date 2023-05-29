@@ -63,7 +63,7 @@ export default function About() {
             <div className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
               <p className="mb-8">
                 Something I´ve always liked since I was a kid is problem
-                solving. Not like how it is with a rubics qube, more like: "Oh
+                solving. Not like how it is with a Rubik´s cube, more like: "Oh
                 crap, this happened and we need to fix it!" And with the odds
                 against us, ofc. I guess I got that from my soccer years. My
                 coach always told us. "It's not over until it's over, and a lot

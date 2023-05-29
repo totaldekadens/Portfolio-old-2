@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useRef } from 'react'
+import { Fragment, useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -72,7 +72,7 @@ function MoonIcon(props) {
 function MobileNavItem({ href, children }) {
   return (
     <li>
-      <Popover.Button as={Link} href={href} className="block py-2">
+      <Popover.Button as={Link} href={href} className="block w-full py-5">
         {children}
       </Popover.Button>
     </li>
@@ -82,9 +82,12 @@ function MobileNavItem({ href, children }) {
 function MobileNavigation(props) {
   return (
     <Popover {...props}>
-      <Popover.Button className="group flex items-center rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20">
-        Menu
-        <ChevronDownIcon className="ml-3 h-auto w-2 stroke-zinc-500 group-hover:stroke-zinc-700 dark:group-hover:stroke-zinc-400" />
+      <Popover.Button className="group flex items-center rounded-full  px-4 py-2 text-sm font-medium text-zinc-800 shadow-zinc-800/5   backdrop-blur  dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20">
+        <div className="space-y-2">
+          <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+          <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+          <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+        </div>
       </Popover.Button>
       <Transition.Root>
         <Transition.Child
@@ -109,22 +112,23 @@ function MobileNavigation(props) {
         >
           <Popover.Panel
             focus
-            className="fixed inset-x-4 top-8 z-50 origin-top rounded-3xl bg-white p-8 ring-1 ring-zinc-900/5 dark:bg-zinc-900 dark:ring-zinc-800"
+            className="fixed inset-x-4 top-8 bottom-8 z-50 origin-top rounded-3xl bg-white p-8 ring-1 ring-zinc-900/5 dark:bg-zinc-900 dark:ring-zinc-800"
           >
             <div className="flex flex-row-reverse items-center justify-between">
               <Popover.Button aria-label="Close menu" className="-m-1 p-1">
                 <CloseIcon className="h-6 w-6 text-zinc-500 dark:text-zinc-400" />
               </Popover.Button>
-              <h2 className="text-sm font-medium text-zinc-600 dark:text-zinc-400">
-                Navigation
-              </h2>
+              <div className=" flex  md:hidden ">
+                <div className="pointer-events-auto">
+                  <ModeToggle />
+                </div>
+              </div>
             </div>
-            <nav className="mt-6">
-              <ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
+
+            <nav className="mt-10 flex h-full w-full ">
+              <ul className="-my-2 flex w-full flex-col  divide-y divide-zinc-100 text-3xl text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
                 <MobileNavItem href="/about">About</MobileNavItem>
-                {/*  <MobileNavItem href="/articles">Articles</MobileNavItem> */}
                 <MobileNavItem href="/projects">Projects</MobileNavItem>
-                {/* <MobileNavItem href="/speaking">Speaking</MobileNavItem> */}
                 <MobileNavItem href="/tech">Tech</MobileNavItem>
                 <MobileNavItem href="/merits">Merits</MobileNavItem>
               </ul>
@@ -402,19 +406,20 @@ export function Header() {
             className="top-[var(--header-top,theme(spacing.6))] w-full"
             style={{ position: 'var(--header-inner-position)' }}
           >
-            <div className="relative flex gap-4">
-              <div className="flex flex-1">
+            <div className="relative flex justify-between gap-4">
+              <div className="flex flex-1 ">
                 {!isHomePage && (
                   <AvatarContainer>
                     <Avatar />
                   </AvatarContainer>
                 )}
               </div>
+
               <div className="flex flex-1 justify-end md:justify-center">
                 <MobileNavigation className="pointer-events-auto md:hidden" />
                 <DesktopNavigation className="pointer-events-auto hidden md:block" />
               </div>
-              <div className="flex justify-end md:flex-1">
+              <div className=" hidden justify-end md:flex md:flex-1">
                 <div className="pointer-events-auto">
                   <ModeToggle />
                 </div>
