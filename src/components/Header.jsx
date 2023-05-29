@@ -23,20 +23,6 @@ function CloseIcon(props) {
   )
 }
 
-function ChevronDownIcon(props) {
-  return (
-    <svg viewBox="0 0 8 6" aria-hidden="true" {...props}>
-      <path
-        d="M1.75 1.75 4 4.25l2.25-2.5"
-        fill="none"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  )
-}
-
 function SunIcon(props) {
   return (
     <svg
@@ -82,7 +68,7 @@ function MobileNavItem({ href, children }) {
 function MobileNavigation(props) {
   return (
     <Popover {...props}>
-      <Popover.Button className="group flex items-center rounded-full  px-4 py-2 text-sm font-medium text-zinc-800 shadow-zinc-800/5   backdrop-blur  dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20">
+      <Popover.Button className="group flex items-center rounded-full  py-2 text-sm font-medium text-zinc-800 shadow-zinc-800/5   backdrop-blur  dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20">
         <div className="space-y-2">
           <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
           <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
