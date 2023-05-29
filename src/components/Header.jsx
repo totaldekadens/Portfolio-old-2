@@ -6,7 +6,7 @@ import { Popover, Transition } from '@headlessui/react'
 import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
-import avatarImage from '@/images/profil.webp'
+import avatarImage from '@/images/newlogo.png'
 
 function CloseIcon(props) {
   return (
@@ -154,9 +154,7 @@ function DesktopNavigation(props) {
     <nav {...props}>
       <ul className="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
         <NavItem href="/about">About</NavItem>
-        {/*    <NavItem href="/articles">Articles</NavItem> */}
         <NavItem href="/projects">Projects</NavItem>
-        {/* <NavItem href="/speaking">Speaking</NavItem> */}
         <NavItem href="/tech">Tech</NavItem>
         <NavItem href="/merits">Merits</NavItem>
       </ul>
@@ -174,7 +172,6 @@ function ModeToggle() {
 
   function toggleMode() {
     disableTransitionsTemporarily()
-
     let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
     let isSystemDarkMode = darkModeMediaQuery.matches
     let isDarkMode = document.documentElement.classList.toggle('dark')
@@ -210,7 +207,7 @@ function AvatarContainer({ className, ...props }) {
     <div
       className={clsx(
         className,
-        'h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10'
+        'h-10 w-10 rounded-full p-0.5 backdrop-blur ' //shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:bg-zinc-800/90 dark:ring-white/10 bg-white/90
       )}
       {...props}
     />
@@ -230,7 +227,7 @@ function Avatar({ large = false, className, ...props }) {
         alt=""
         sizes={large ? '4rem' : '2.25rem'}
         className={clsx(
-          'rounded-full bg-zinc-100 object-cover dark:bg-zinc-800',
+          'rounded-full ', // bg-zinc-100 object-cover dark:bg-zinc-800
           large ? 'h-16 w-16' : 'h-9 w-9'
         )}
         priority
