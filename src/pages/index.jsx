@@ -94,6 +94,19 @@ function SocialLink({ icon: Icon, ...props }) {
   )
 }
 
+function ArrowDownIcon(props) {
+  return (
+    <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
+      <path
+        d="M4.75 8.75 8 12.25m0 0 3.25-3.5M8 12.25v-8.5"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+
 function MailIcon(props) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
@@ -182,10 +195,18 @@ function Resume() {
           </li>
         ))}
       </ol>
-      {/*  <Button href="#" variant="secondary" className="group mt-6 w-full">
-        Download CV
-        <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
-      </Button> */}
+      <a href="/cv/Angelica_Moberg_Skoglund_CV_Light1.pdf" target="_blank">
+        <Button variant="secondary" className="group mt-6 w-full">
+          Download CV - Light
+          <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
+        </Button>
+      </a>
+      <a href="/cv/Angelica_Moberg_Skoglund_CV_Dark" target="_blank">
+        <Button variant="secondary" className="group mt-6 w-full">
+          Download CV - Dark
+          <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
+        </Button>
+      </a>
     </div>
   )
 }
@@ -229,6 +250,10 @@ export default function Home({ articles }) {
           name="description"
           content="Web developer based in Sweden´s
             little Tuscany, Skene in Marks kommun."
+        />
+        <meta
+          property="og:image"
+          content="https://mobergskoglund.se/newlogo.png"
         />
       </Head>
       <Container className="mt-9">
