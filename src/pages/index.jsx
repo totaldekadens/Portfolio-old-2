@@ -201,7 +201,7 @@ function Resume() {
           <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
         </Button>
       </a>
-      <a href="/cv/Angelica_Moberg_Skoglund_CV_Dark" target="_blank">
+      <a href="/cv/Angelica_Moberg_Skoglund_CV_Dark.pdf" target="_blank">
         <Button variant="secondary" className="group mt-6 w-full">
           Download CV - Dark
           <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
