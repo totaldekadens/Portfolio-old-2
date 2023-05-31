@@ -68,11 +68,11 @@ function MobileNavItem({ href, children }) {
 function MobileNavigation(props) {
   return (
     <Popover {...props}>
-      <Popover.Button className="group flex items-center rounded-full  py-2 text-sm font-medium text-zinc-800 shadow-zinc-800/5   backdrop-blur  dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20">
+      <Popover.Button className="group flex items-center rounded-full px-2 py-2 text-sm font-medium text-zinc-800 shadow-zinc-800/5   backdrop-blur  dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20">
         <div className="space-y-2">
           <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-          <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-          <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+          <span className="block h-0.5 w-4 animate-pulse bg-gray-600"></span>
+          <span className="block h-0.5 w-2 animate-pulse bg-gray-600"></span>
         </div>
       </Popover.Button>
       <Transition.Root>
