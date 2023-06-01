@@ -24,7 +24,7 @@ import image5 from '@/images/photos/image-5.jpeg'
 import { formatDate } from '@/lib/formatDate'
 import { generateRssFeed } from '@/lib/generateRssFeed'
 import { getAllArticles } from '@/lib/getAllArticles'
-
+import { ChevronRightIcon } from '@/components/Card'
 /* function MailIcon(props) {
   return (
     <svg
@@ -81,6 +81,13 @@ function Article({ article }) {
         {formatDate(article.date)}
       </Card.Eyebrow>
       <Card.Description>{article.description}</Card.Description>
+      <div className="flex flex-wrap gap-2">
+        {article.keys.map((key) => (
+          <div className="z-20 mt-1 rounded-full bg-zinc-200 px-2 text-xs text-zinc-500 dark:bg-zinc-800 dark:text-zinc-500">
+            {key}
+          </div>
+        ))}
+      </div>
       <Card.Cta>Go to project</Card.Cta>
     </Card>
   )
@@ -288,9 +295,16 @@ export default function Home({ articles }) {
       <Container className="mt-24 md:mt-28">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
           <div className="flex flex-col gap-16">
-            {articles.map((article) => (
+            {articles.slice(0, 3).map((article) => (
               <Article key={article.slug} article={article} />
             ))}
+            <Link
+              href={'/projects'}
+              className="flex w-full items-center justify-end text-sm font-semibold text-zinc-800 dark:text-zinc-100 "
+            >
+              Go to all projects
+              <ChevronRightIcon className="ml-1 h-4 w-4 stroke-current" />
+            </Link>
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
             <Resume />
