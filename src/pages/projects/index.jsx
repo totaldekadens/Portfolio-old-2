@@ -9,9 +9,8 @@ import Link from 'next/link'
 function Article({ article }) {
   return (
     <article className="flex">
-      {/* md:grid md:grid-cols-2 md:items-baseline */}
       <Link href={`/projects/${article.slug}`} className="md:w-3/4">
-        <Card className="md:col-span-3">
+        <Card className=" md:col-span-3">
           <Image
             src={article.image}
             className="z-20 mb-3 block rounded-lg md:hidden"
