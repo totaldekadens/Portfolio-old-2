@@ -8,8 +8,17 @@ import Link from 'next/link'
 
 function Article({ article }) {
   return (
-    <article className="flex">
-      <Link href={`/projects/${article.slug}`} className="md:w-3/4">
+    <article className="flex gap-1">
+      {/*   <div className=" hidden items-start justify-center md:flex">
+        <Image
+          className="w-[140px] rounded-lg lg:w-[150px]"
+          src={article.image}
+        />
+      </div> */}
+      <Link
+        href={`/projects/${article.slug}`}
+        className="md:ml-2 md:w-8/12 lg:w-3/4"
+      >
         <Card className=" md:col-span-3">
           <Image
             src={article.image}
@@ -38,12 +47,19 @@ function Article({ article }) {
           <Card.Cta>Go to project</Card.Cta>
         </Card>
       </Link>
+
       <Card.Eyebrow
         as="time"
         dateTime={article.date}
         className="mt-1 hidden flex-1 md:block"
       >
         {formatDate(article.date)}
+        <div className=" mt-4 hidden items-start justify-start md:flex">
+          <Image
+            className="w-[140px] rounded-lg lg:w-[150px]"
+            src={article.image}
+          />
+        </div>
       </Card.Eyebrow>
     </article>
   )
