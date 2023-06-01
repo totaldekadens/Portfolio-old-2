@@ -73,23 +73,25 @@ function BriefcaseIcon(props) {
 
 function Article({ article }) {
   return (
-    <Card as="article">
-      <Card.Title href={`/projects/${article.slug}`}>
-        {article.title}
-      </Card.Title>
-      <Card.Eyebrow as="time" dateTime={article.date} decorate>
-        {formatDate(article.date)}
-      </Card.Eyebrow>
-      <Card.Description>{article.description}</Card.Description>
-      <div className="flex flex-wrap gap-2">
-        {article.keys.map((key) => (
-          <div className="z-20 mt-1 rounded-full bg-zinc-200 px-2 text-xs text-zinc-500 dark:bg-zinc-800 dark:text-zinc-500">
-            {key}
-          </div>
-        ))}
-      </div>
-      <Card.Cta>Go to project</Card.Cta>
-    </Card>
+    <Link href={`/projects/${article.slug}`}>
+      <Card as="article">
+        <Card.Title href={`/projects/${article.slug}`}>
+          {article.title}
+        </Card.Title>
+        <Card.Eyebrow as="time" dateTime={article.date} decorate>
+          {formatDate(article.date)}
+        </Card.Eyebrow>
+        <Card.Description>{article.description}</Card.Description>
+        <div className="flex flex-wrap gap-2">
+          {article.keys.map((key) => (
+            <div className="z-20 mt-1 rounded-full bg-zinc-200 px-2 text-xs text-zinc-500 dark:bg-zinc-800 dark:text-zinc-500">
+              {key}
+            </div>
+          ))}
+        </div>
+        <Card.Cta>Go to project</Card.Cta>
+      </Card>
+    </Link>
   )
 }
 

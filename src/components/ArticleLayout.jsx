@@ -49,6 +49,7 @@ export function ArticleLayout({
                 <ArrowLeftIcon className="h-4 w-4 stroke-zinc-500 transition group-hover:stroke-zinc-700 dark:stroke-zinc-500 dark:group-hover:stroke-zinc-400" />
               </button>
             )}
+
             <article>
               <header className="flex flex-col">
                 <h1 className="mt-6 text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
@@ -62,6 +63,14 @@ export function ArticleLayout({
                   <span className="ml-3">{formatDate(meta.date)}</span>
                 </time>
               </header>
+
+              <div className="flex flex-wrap gap-2">
+                {meta.keys.map((key) => (
+                  <div className="z-20 mt-4 rounded-full bg-zinc-200 px-2 py-1 text-[10px] text-zinc-500 dark:bg-zinc-800 dark:text-zinc-500 md:py-0 md:text-xs">
+                    {key}
+                  </div>
+                ))}
+              </div>
               <Prose className="mt-8">{children}</Prose>
             </article>
           </div>
