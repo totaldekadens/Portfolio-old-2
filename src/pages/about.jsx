@@ -52,13 +52,13 @@ export default function About() {
                 src={portraitImage}
                 alt=""
                 sizes="(min-width: 1024px) 32rem, 20rem"
-                className="aspect-square border-spacing-4 rotate-3 rounded-2xl border  border-light-300 bg-zinc-100 object-cover ring-2  ring-light-300/50  ring-offset-4 dark:bg-zinc-800 dark:ring-offset-dark-200 md:border-light-300 "
+                className="aspect-square  rotate-3 rounded-2xl bg-zinc-100 object-cover  dark:bg-zinc-800 "
               />
             </div>
           </div>
           <div className="lg:order-first lg:row-span-2">
             <h1 className="text-4xl font-bold tracking-tight text-dark-200 dark:text-light-200 sm:text-5xl">
-              Hi! I’m Angelica :)
+              Hi! I’m Angelica <span className="text-light-300">:)</span>
             </h1>
             <div className="mt-6 text-base text-dark-200/80 dark:text-zinc-400">
               <p className="mb-8">
@@ -70,7 +70,7 @@ export default function About() {
                 can happen if you want to." Some people quit, I don't.
                 Challenges motivates me. I'm stubborn and positive. :)
               </p>
-              <b>My nish?</b>
+              <b className="dark:text-light-100">My nish?</b>
               <p className="mb-8">
                 This one is so hard, because I’m right between frontend and
                 backend at the moment. I know I like to work with functionality
@@ -78,7 +78,7 @@ export default function About() {
                 admin pages within projects in school and been the one ending up
                 with creating the API’s.
               </p>
-              <b>How I work?</b>
+              <b className="dark:text-light-100">How I work?</b>
               <p className="mb-8">
                 When I go back and look at how it was at my previous workplaces,
                 I notice a pattern. I get a task or responsibility and I end up
@@ -89,7 +89,7 @@ export default function About() {
                 have also heard that I'm comfortable to be around with. If
                 someone wants a hug, I'm always there.
               </p>
-              <b>Teamwork?</b>
+              <b className="dark:text-light-100">Teamwork?</b>
               <p className="mb-8">
                 I played soccer until I turned 23 so I’m a team player in the
                 root. I have no problem helping out if someone is in need of
@@ -97,7 +97,7 @@ export default function About() {
                 me. We do it together and we complement each other, that’s my
                 mindset.
               </p>{' '}
-              <b>Leadership?</b>
+              <b className="dark:text-light-100">Leadership?</b>
               <p>
                 In total I have had a leadership role in almost 7 years. I love
                 being there for people and help them grow. My ambition is not to
