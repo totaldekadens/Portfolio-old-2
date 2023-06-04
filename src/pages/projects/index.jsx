@@ -5,16 +5,11 @@ import { formatDate } from '@/lib/formatDate'
 import { getAllArticles } from '@/lib/getAllArticles'
 import Image from 'next/image'
 import Link from 'next/link'
+import Badges from '@/components/Badges'
 
 function Article({ article }) {
   return (
     <article className="flex gap-1">
-      {/*   <div className=" hidden items-start justify-center md:flex">
-        <Image
-          className="w-[140px] rounded-lg lg:w-[150px]"
-          src={article.image}
-        />
-      </div> */}
       <Link
         href={`/projects/${article.slug}`}
         className="md:ml-2 md:w-8/12 lg:w-3/4"
@@ -35,16 +30,9 @@ function Article({ article }) {
           >
             {formatDate(article.date)}
           </Card.Eyebrow>
-
           <Card.Description>{article.description}</Card.Description>
-          <div className="flex flex-wrap gap-2">
-            {article.keys.map((key) => (
-              <div className="z-20 mt-1 rounded-full bg-zinc-200 px-2 text-xs text-zinc-500 dark:bg-zinc-800 dark:text-zinc-500">
-                {key}
-              </div>
-            ))}
-          </div>
-          <Card.Cta>Go to project</Card.Cta>
+          <Badges keys={article.keys} />
+          <Card.Cta>{/* Go to project */}</Card.Cta>
         </Card>
       </Link>
 

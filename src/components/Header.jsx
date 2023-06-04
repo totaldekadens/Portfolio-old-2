@@ -68,7 +68,7 @@ function MobileNavItem({ href, children }) {
 function MobileNavigation(props) {
   return (
     <Popover {...props}>
-      <Popover.Button className="group flex items-center rounded-full px-2 py-2 text-sm font-medium text-zinc-800 shadow-zinc-800/5   backdrop-blur  dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20">
+      <Popover.Button className="group flex items-center rounded-full px-2 py-2 text-sm font-medium text-zinc-800   backdrop-blur dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20">
         <div className="space-y-2">
           <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
           <span className="block h-0.5 w-4 animate-pulse bg-gray-600"></span>
@@ -77,7 +77,6 @@ function MobileNavigation(props) {
       </Popover.Button>
       <Transition.Root>
         <Transition.Child
-          as={Fragment}
           enter="duration-150 ease-out"
           enterFrom="opacity-0"
           enterTo="opacity-100"
@@ -89,20 +88,20 @@ function MobileNavigation(props) {
         </Transition.Child>
         <Transition.Child
           as={Fragment}
-          enter="duration-150 ease-out"
-          enterFrom="opacity-0 scale-95"
-          enterTo="opacity-100 scale-100"
-          leave="duration-150 ease-in"
-          leaveFrom="opacity-100 scale-100"
-          leaveTo="opacity-0 scale-95"
+          enter="transform transition ease-in-out duration-500 sm:duration-700"
+          enterFrom="translate-x-full"
+          enterTo="translate-x-0"
+          leave="transform transition ease-in-out duration-500 sm:duration-700"
+          leaveFrom="translate-x-0"
+          leaveTo="translate-x-full"
         >
           <Popover.Panel
             focus
-            className="fixed inset-x-4 top-8 bottom-8 z-50 origin-top rounded-3xl bg-white p-8 ring-1 ring-zinc-900/5 dark:bg-zinc-900 dark:ring-zinc-800"
+            className="fixed inset-x-4 right-0 left-32 top-0 bottom-0 z-50 origin-top  bg-light-300 px-8 py-5 dark:bg-dark-300 "
           >
             <div className="flex flex-row-reverse items-center justify-between">
               <Popover.Button aria-label="Close menu" className="-m-1 p-1">
-                <CloseIcon className="h-6 w-6 text-zinc-500 dark:text-zinc-400" />
+                <CloseIcon className="h-10 w-10 text-light-100 dark:text-light-100" />
               </Popover.Button>
               <div className=" flex  md:hidden ">
                 <div className="pointer-events-auto">
@@ -111,8 +110,8 @@ function MobileNavigation(props) {
               </div>
             </div>
 
-            <nav className="mt-10 flex h-full w-full ">
-              <ul className="-my-2 flex w-full flex-col  divide-y divide-zinc-100 text-3xl text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
+            <nav className="mt-10 flex h-full w-full  ">
+              <ul className="-my-2 flex w-full flex-col  divide-y divide-light-50/20 text-3xl text-light-100 dark:divide-zinc-100/5 dark:text-light-200">
                 <MobileNavItem href="/about">About</MobileNavItem>
                 <MobileNavItem href="/projects">Projects</MobileNavItem>
                 <MobileNavItem href="/tech">Tech</MobileNavItem>
@@ -136,8 +135,8 @@ function NavItem({ href, children }) {
         className={clsx(
           'relative block px-3 py-2 transition',
           isActive
-            ? 'text-teal-500 dark:text-teal-400'
-            : 'hover:text-teal-500 dark:hover:text-teal-400'
+            ? 'text-dark-100 dark:text-light-300'
+            : 'hover:text-dark-100 dark:hover:text-light-300'
         )}
       >
         {children}
@@ -152,7 +151,7 @@ function NavItem({ href, children }) {
 function DesktopNavigation(props) {
   return (
     <nav {...props}>
-      <ul className="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
+      <ul className="flex rounded-lg px-3 text-sm font-medium text-light-300  backdrop-blur  dark:text-light-100 ">
         <NavItem href="/about">About</NavItem>
         <NavItem href="/projects">Projects</NavItem>
         <NavItem href="/tech">Tech</NavItem>
@@ -187,11 +186,11 @@ function ModeToggle() {
     <button
       type="button"
       aria-label="Toggle dark mode"
-      className="group rounded-full bg-white/90 px-3 py-2 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20"
+      className="group rounded-full  px-3 py-2 shadow-lg  backdrop-blur transition  dark:ring-white/10 dark:hover:ring-white/20"
       onClick={toggleMode}
     >
-      <SunIcon className="h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-teal-50 [@media(prefers-color-scheme:dark)]:stroke-teal-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-teal-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-teal-600" />
-      <MoonIcon className="hidden h-6 w-6 fill-zinc-700 stroke-zinc-500 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-zinc-400 [@media_not_(prefers-color-scheme:dark)]:fill-teal-400/10 [@media_not_(prefers-color-scheme:dark)]:stroke-teal-500" />
+      <SunIcon className="h-6 w-6 fill-light-300  stroke-zinc-400  transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden md:fill-zinc-100 [@media(prefers-color-scheme:dark)]:fill-teal-50 [@media(prefers-color-scheme:dark)]:stroke-light-100 [@media(prefers-color-scheme:dark)]:group-hover:fill-teal-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-dark-300  [@media(prefers-color-scheme:dark)]:md:stroke-light-300" />
+      <MoonIcon className="hidden h-6 w-6  stroke-light-200 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-light-300 [@media_not_(prefers-color-scheme:dark)]:fill-teal-400/10 [@media_not_(prefers-color-scheme:dark)]:stroke-teal-500" />
     </button>
   )
 }

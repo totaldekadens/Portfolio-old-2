@@ -33,7 +33,7 @@ export function ArticleLayout({
   return (
     <>
       <Head>
-        <title>{`${meta.title} - Spencer Sharp`}</title>
+        <title>{`${meta.title} - Angelica Moberg Skoglund`}</title>
         <meta name="description" content={meta.description} />
       </Head>
       <Container className="mt-16 lg:mt-32">
@@ -44,9 +44,9 @@ export function ArticleLayout({
                 type="button"
                 onClick={() => router.back()}
                 aria-label="Go back to projects"
-                className="group mb-8 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 transition dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20 lg:absolute lg:-left-5 lg:mb-0 lg:-mt-2 xl:-top-1.5 xl:left-0 xl:mt-0"
+                className="group mb-8 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 transition  dark:bg-dark-300 dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20 lg:absolute lg:-left-5 lg:mb-0 lg:-mt-2 xl:-top-1.5 xl:left-0 xl:mt-0"
               >
-                <ArrowLeftIcon className="h-4 w-4 stroke-zinc-500 transition group-hover:stroke-zinc-700 dark:stroke-zinc-500 dark:group-hover:stroke-zinc-400" />
+                <ArrowLeftIcon className="h-4 w-4 stroke-zinc-500 transition group-hover:stroke-zinc-700 dark:stroke-light-200 dark:group-hover:stroke-zinc-400" />
               </button>
             )}
 
@@ -66,7 +66,7 @@ export function ArticleLayout({
 
               <div className="flex flex-wrap gap-2">
                 {meta.keys.map((key) => (
-                  <div className="z-20 mt-4 rounded-full bg-zinc-200 px-2 py-1 text-[10px] text-zinc-500 dark:bg-zinc-800 dark:text-zinc-500 md:py-0 md:text-xs">
+                  <div className="z-20 mt-4 rounded-full bg-zinc-200 bg-light-300/60 px-2  py-1 text-[10px]   text-light-50 dark:bg-zinc-800 dark:bg-dark-300/60  dark:text-light-200 md:py-0 md:text-xs ">
                     {key}
                   </div>
                 ))}

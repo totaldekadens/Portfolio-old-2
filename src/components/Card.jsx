@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import clsx from 'clsx'
+import { ArrowRight } from '@/pages'
 
 export function ChevronRightIcon(props) {
   return (
@@ -27,18 +28,16 @@ export function Card({ as: Component = 'div', className, children }) {
 Card.Link = function CardLink({ children, ...props }) {
   return (
     <>
-      <div className="absolute -inset-y-6 -inset-x-4 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100  group-hover:opacity-100  dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl" />
-      {/* <Link {...props}> */}
-      <span className="absolute -inset-y-6 -inset-x-4  bg-gradient-to-b from-white to-zinc-50/50 dark:from-zinc-900 dark:to-black/10  sm:-inset-x-6 sm:rounded-2xl sm:bg-transparent sm:bg-none" />
+      <div className="absolute -inset-y-6 -inset-x-4 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100  group-hover:opacity-100  dark:bg-dark-300 sm:-inset-x-6 sm:rounded-2xl" />
+      <span className="absolute -inset-y-6 -inset-x-4  bg-gradient-to-b from-light-100 to-zinc-50  dark:from-dark-200  dark:to-black/5  sm:-inset-x-6 sm:rounded-2xl sm:bg-transparent sm:bg-none" />
       <span className="relative z-10">{children}</span>
-      {/*  </Link> */}
     </>
   )
 }
 
 Card.Title = function CardTitle({ as: Component = 'h2', href, children }) {
   return (
-    <Component className="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
+    <Component className="text-base font-semibold tracking-tight text-dark-200 dark:text-light-100">
       {href ? <Card.Link href={href}>{children}</Card.Link> : children}
     </Component>
   )
@@ -56,10 +55,11 @@ Card.Cta = function CardCta({ children }) {
   return (
     <div
       aria-hidden="true"
-      className="relative z-10 mt-4 flex items-center text-sm font-medium text-teal-500"
+      className="relative z-10 mt-4 flex w-full items-center justify-end text-sm font-medium text-dark-50 dark:text-light-300/60"
     >
       {children}
-      <ChevronRightIcon className="ml-1 h-4 w-4 stroke-current" />
+      {/*  <ChevronRightIcon className="ml-1 h-4 w-4 stroke-current" /> */}
+      <ArrowRight />
     </div>
   )
 }

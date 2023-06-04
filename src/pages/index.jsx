@@ -25,28 +25,30 @@ import { formatDate } from '@/lib/formatDate'
 import { generateRssFeed } from '@/lib/generateRssFeed'
 import { getAllArticles } from '@/lib/getAllArticles'
 import { ChevronRightIcon } from '@/components/Card'
-/* function MailIcon(props) {
+import CVButton from '@/components/CVButton'
+import Badges from '@/components/Badges'
+
+export function ArrowRight(props) {
   return (
     <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="icon icon-tabler icon-tabler-arrow-right"
+      width="28"
+      height="28"
       viewBox="0 0 24 24"
+      stroke-width="2"
+      stroke="currentColor"
       fill="none"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      {...props}
+      stroke-linecap="round"
+      stroke-linejoin="round"
     >
-      <path
-        d="M2.75 7.75a3 3 0 0 1 3-3h12.5a3 3 0 0 1 3 3v8.5a3 3 0 0 1-3 3H5.75a3 3 0 0 1-3-3v-8.5Z"
-        className="fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500"
-      />
-      <path
-        d="m4 6 6.024 5.479a2.915 2.915 0 0 0 3.952 0L20 6"
-        className="stroke-zinc-400 dark:stroke-zinc-500"
-      />
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M5 12l14 0"></path>
+      <path d="M13 18l6 -6"></path>
+      <path d="M13 6l6 6"></path>
     </svg>
   )
-} */
+}
 
 function BriefcaseIcon(props) {
   return (
@@ -61,11 +63,11 @@ function BriefcaseIcon(props) {
     >
       <path
         d="M2.75 9.75a3 3 0 0 1 3-3h12.5a3 3 0 0 1 3 3v8.5a3 3 0 0 1-3 3H5.75a3 3 0 0 1-3-3v-8.5Z"
-        className="fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500"
+        className="fill-zinc-100 stroke-light-300 dark:fill-zinc-100/10 dark:stroke-zinc-500"
       />
       <path
         d="M3 14.25h6.249c.484 0 .952-.002 1.316.319l.777.682a.996.996 0 0 0 1.316 0l.777-.682c.364-.32.832-.319 1.316-.319H21M8.75 6.5V4.75a2 2 0 0 1 2-2h2.5a2 2 0 0 1 2 2V6.5"
-        className="stroke-zinc-400 dark:stroke-zinc-500"
+        className="stroke-light-300 dark:stroke-zinc-500"
       />
     </svg>
   )
@@ -82,14 +84,8 @@ function Article({ article }) {
           {formatDate(article.date)}
         </Card.Eyebrow>
         <Card.Description>{article.description}</Card.Description>
-        <div className="flex flex-wrap gap-2">
-          {article.keys.map((key) => (
-            <div className="z-20 mt-1 rounded-full bg-zinc-200 px-2 text-xs text-zinc-500 dark:bg-zinc-800 dark:text-zinc-500">
-              {key}
-            </div>
-          ))}
-        </div>
-        <Card.Cta>Go to project</Card.Cta>
+        <Badges keys={article.keys} />
+        <Card.Cta>{/* Go to project */}</Card.Cta>
       </Card>
     </Link>
   )
@@ -98,12 +94,12 @@ function Article({ article }) {
 function SocialLink({ icon: Icon, ...props }) {
   return (
     <Link className="group -m-1 p-1" {...props}>
-      <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+      <Icon className="h-6 w-6 fill-dark-50 transition group-hover:fill-light-300 dark:fill-zinc-400 dark:group-hover:fill-light-300" />
     </Link>
   )
 }
 
-function ArrowDownIcon(props) {
+export function ArrowDownIcon(props) {
   return (
     <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
       <path
@@ -160,15 +156,15 @@ function Resume() {
   ]
 
   return (
-    <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
-      <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-        <BriefcaseIcon className="h-6 w-6 flex-none" />
+    <div className="rounded-2xl border border-zinc-200 p-6 dark:border-zinc-700/40">
+      <h2 className="flex text-sm font-semibold text-dark-200 dark:text-zinc-100">
+        <BriefcaseIcon className="h-6 w-6 flex-none " />
         <span className="ml-3">Work</span>
       </h2>
       <ol className="mt-6 space-y-4">
         {resume.map((role, roleIndex) => (
           <li key={roleIndex} className="flex gap-4">
-            <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+            <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50  dark:ring-0">
               <Image
                 src={role.logo}
                 alt=""
@@ -178,7 +174,7 @@ function Resume() {
             </div>
             <dl className="flex flex-auto flex-wrap gap-x-2">
               <dt className="sr-only">Company</dt>
-              <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
+              <dd className="w-full flex-none text-sm font-medium text-dark-200 dark:text-zinc-100">
                 {role.company}
               </dd>
               <dt className="sr-only">Role</dt>
@@ -187,7 +183,7 @@ function Resume() {
               </dd>
               <dt className="sr-only">Date</dt>
               <dd
-                className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
+                className="ml-auto text-xs text-dark-50 dark:text-zinc-500"
                 aria-label={`${role.start.label ?? role.start} until ${
                   role.end.label ?? role.end
                 }`}
@@ -204,18 +200,14 @@ function Resume() {
           </li>
         ))}
       </ol>
-      <a href="/cv/Angelica_Moberg_Skoglund_CV_Light1.pdf" target="_blank">
-        <Button variant="secondary" className="group mt-6 w-full">
-          Download CV - Light
-          <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
-        </Button>
-      </a>
-      <a href="/cv/Angelica_Moberg_Skoglund_CV_Dark.pdf" target="_blank">
-        <Button variant="secondary" className="group mt-6 w-full">
-          Download CV - Dark
-          <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
-        </Button>
-      </a>
+      <CVButton
+        title="Download CV - Light"
+        href="/cv/Angelica_Moberg_Skoglund_CV_Light1.pdf"
+      />
+      <CVButton
+        title="Download CV - Dark"
+        href="/cv/Angelica_Moberg_Skoglund_CV_Dark.pdf"
+      />
     </div>
   )
 }
@@ -230,7 +222,7 @@ function Photos() {
           <div
             key={image.src}
             className={clsx(
-              'relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl',
+              'relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-light-100 dark:bg-dark-300 sm:w-72 sm:rounded-2xl',
               rotations[imageIndex % rotations.length]
             )}
           >
@@ -267,10 +259,13 @@ export default function Home({ articles }) {
       </Head>
       <Container className="mt-9">
         <div className="max-w-2xl">
-          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Web developer, cat mom and a hobby-ish carpenter.
+          <h1 className="text-4xl font-bold tracking-tight text-light-300 dark:text-light-300 sm:text-5xl">
+            <span className="text-dark-200 dark:text-light-100">
+              Web developer,{' '}
+            </span>
+            cat mom and a hobby-ish carpenter.
           </h1>
-          <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
+          <p className="mt-6 text-base text-dark-100 dark:text-dark-50">
             I’m Angelica, a newly graduated web developer based in Sweden´s
             little Tuscany, Skene in Marks kommun.
           </p>
@@ -302,7 +297,7 @@ export default function Home({ articles }) {
             ))}
             <Link
               href={'/projects'}
-              className="flex w-full items-center justify-end text-sm font-semibold text-zinc-800 dark:text-zinc-100 "
+              className="flex w-full items-center justify-end text-sm font-semibold text-dark-200 dark:text-light-100 "
             >
               Go to all projects
               <ChevronRightIcon className="ml-1 h-4 w-4 stroke-current" />

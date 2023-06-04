@@ -17,9 +17,9 @@ function SocialLink({ className, href, children, icon: Icon }) {
     <li className={clsx(className, 'flex')}>
       <Link
         href={href}
-        className="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
+        className="group flex text-sm font-medium text-dark-100 transition hover:text-dark-200 dark:text-light-200 dark:hover:text-light-200"
       >
-        <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500" />
+        <Icon className="h-6 w-6 flex-none fill-dark-100 transition group-hover:fill-dark-50" />
         <span className="ml-4">{children}</span>
       </Link>
     </li>
@@ -46,21 +46,21 @@ export default function About() {
       </Head>
       <Container className="mt-16 sm:mt-32">
         <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
-          <div className="lg:pl-20">
+          <div className="flex w-full justify-center lg:pl-20 ">
             <div className="max-w-xs px-2.5 lg:max-w-none">
               <Image
                 src={portraitImage}
                 alt=""
                 sizes="(min-width: 1024px) 32rem, 20rem"
-                className="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
+                className="aspect-square border-spacing-4 rotate-3 rounded-2xl border  border-light-300 bg-zinc-100 object-cover ring-2  ring-light-300/50  ring-offset-4 dark:bg-zinc-800 dark:ring-offset-dark-200 md:border-light-300 "
               />
             </div>
           </div>
           <div className="lg:order-first lg:row-span-2">
-            <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+            <h1 className="text-4xl font-bold tracking-tight text-dark-200 dark:text-light-200 sm:text-5xl">
               Hi! I’m Angelica :)
             </h1>
-            <div className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
+            <div className="mt-6 text-base text-dark-200/80 dark:text-zinc-400">
               <p className="mb-8">
                 Something I´ve always liked since I was a kid is problem
                 solving. Not like how it is with a Rubik´s cube, more like: "Oh
@@ -108,12 +108,6 @@ export default function About() {
           </div>
           <div className="lg:pl-20">
             <ul role="list">
-              {/*  <SocialLink href="#" icon={TwitterIcon}>
-                Follow on Twitter
-              </SocialLink>
-              <SocialLink href="#" icon={InstagramIcon} className="mt-4">
-                Follow on Instagram
-              </SocialLink> */}
               <SocialLink
                 href="https://github.com/totaldekadens"
                 icon={GitHubIcon}
