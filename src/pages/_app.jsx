@@ -1,10 +1,14 @@
 import { useEffect, useRef } from 'react'
-
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
-
+//import { Inter } from '@next/font/google'
 import '@/styles/tailwind.css'
 import 'focus-visible'
+
+/* const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+}) */
 
 function usePrevious(value) {
   let ref = useRef()
@@ -26,7 +30,7 @@ export default function App({ Component, pageProps, router }) {
           <div className="w-full bg-light-100   dark:bg-dark-200 " />
         </div>
       </div>
-      <div className="relative">
+      <div className={'relative'}>
         <Header />
         <main>
           <Component previousPathname={previousPathname} {...pageProps} />

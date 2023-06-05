@@ -5,6 +5,9 @@ module.exports = {
   plugins: [require('@tailwindcss/typography')],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Montserrat'],
+      },
       colors: {
         light: {
           50: '#ffffff',

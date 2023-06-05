@@ -257,7 +257,7 @@ export default function Home({ articles }) {
           content="https://mobergskoglund.se/newlogo.png"
         />
       </Head>
-      <Container className="mt-9">
+      <Container className={'mt-9'}>
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-light-300 dark:text-light-300 sm:text-5xl">
             <span className="text-dark-200 dark:text-light-100">
